@@ -3,6 +3,7 @@ use chimp_core::CodePluginRegistrar;
 
 chimp_core::export_plugin!(register);
 
+#[allow(improper_ctypes_definitions)]
 extern "C" fn register(registrar: &mut dyn CodePluginRegistrar) {
     registrar.register_scm("github", Box::new(GitHub { owner: String::from("burtonr")}));
 }

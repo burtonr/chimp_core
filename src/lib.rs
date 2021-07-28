@@ -7,6 +7,7 @@ pub trait CodePluginRegistrar {
     fn register_scm(&mut self, name: &str, scm: Box<dyn chimp_code::SCM>);
 }
 
+#[derive(Copy, Clone)]
 pub struct CodePluginDeclaration {
     pub rustc_version: &'static str,
     pub core_version: &'static str,
